@@ -1,33 +1,31 @@
 
 import React from 'react';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { Utensils } from 'lucide-react';
 
 const UsageSection = () => {
-  // Usage steps
-  const steps = [
-    {
-      step: 1,
-      title: "Sift matcha",
-      description: "Sift 1-2 tsp into a bowl",
-      icon: "🍵"
-    },
-    {
-      step: 2,
-      title: "Add hot water",
-      description: "Add 76 ml of hot water (80°C)",
-      icon: "💧"
-    },
-    {
-      step: 3,
-      title: "Whisk until frothy",
-      description: "Use a bamboo whisk in a W motion",
-      icon: "🍃"
-    }
-  ];
-
-  // Applications
+  // Different matcha applications
   const applications = [
-    "Cafe Lattes", "Smoothies", "Ice Creams", 
-    "Cakes", "Health Shots", "Matcha Cookies"
+    {
+      name: "Matcha Latte",
+      description: "Creamy and smooth, perfect for cafés",
+      image: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      name: "Matcha Ice Cream",
+      description: "Refreshing dessert option",
+      image: "https://images.unsplash.com/photo-1561845730-208ad5910553?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      name: "Matcha Energy Shots",
+      description: "Quick wellness boost",
+      image: "https://images.unsplash.com/photo-1563929437588-6a3e28ddf494?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      name: "Matcha Pastries",
+      description: "Bakery and café offerings",
+      image: "https://images.unsplash.com/photo-1531051580877-6dea43d81974?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    }
   ];
 
   return (
@@ -37,60 +35,88 @@ const UsageSection = () => {
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-matcha mb-4">
             <span className="heading-underline">🧾 Usage & Applications</span>
           </h2>
+          <p className="text-matcha-dark/80 mt-4">
+            Elevate your menu with these trendy matcha applications
+          </p>
         </div>
         
-        <div className="flex flex-col md:flex-row gap-12 md:gap-6 lg:gap-12">
-          {/* Preparation Steps */}
-          <div className="md:w-1/2">
-            <h3 className="text-2xl font-serif text-matcha mb-8 text-center md:text-left">
-              How to Prepare Matcha
-            </h3>
-            
-            <div className="space-y-8">
-              {steps.map((step, index) => (
-                <div key={index} className="flex gap-6 items-start">
-                  <div className="w-12 h-12 rounded-full bg-matcha/10 text-matcha flex items-center justify-center flex-shrink-0">
-                    <span className="text-xl">{step.icon}</span>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-medium text-matcha mb-1">
-                      {step.step}. {step.title}
-                    </h4>
-                    <p className="text-matcha-dark/70">{step.description}</p>
-                  </div>
-                </div>
-              ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {applications.map((app, index) => (
+            <div key={index} className="bg-white rounded-lg overflow-hidden shadow-sm border border-matcha/10 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <div className="w-full h-64 relative">
+                <AspectRatio ratio={16/9}>
+                  <img 
+                    src={app.image} 
+                    alt={app.name} 
+                    className="w-full h-full object-cover"
+                  />
+                </AspectRatio>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-serif font-medium text-matcha mb-2">{app.name}</h3>
+                <p className="text-matcha-dark/70">{app.description}</p>
+              </div>
             </div>
-          </div>
-          
-          {/* Applications */}
-          <div className="md:w-1/2">
-            <h3 className="text-2xl font-serif text-matcha mb-8 text-center md:text-left">
-              Popular Applications
-            </h3>
+          ))}
+        </div>
+        
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="lg:col-span-2 bg-matcha/5 p-8 rounded-lg border border-matcha/10 shadow-sm">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-full bg-matcha flex items-center justify-center text-white">
+                <Utensils size={18} />
+              </div>
+              <h3 className="text-xl font-serif font-medium text-matcha">Popular Applications</h3>
+            </div>
             
-            <div className="grid grid-cols-2 gap-4">
-              {applications.map((app, index) => (
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
+              {["Café Lattes", "Smoothies", "Ice Creams", "Cakes", "Health Shots", "Matcha Cookies"].map((item, i) => (
                 <div 
-                  key={index} 
-                  className="bg-matcha/5 hover:bg-matcha/10 transition-colors p-5 rounded-lg border border-matcha/10 text-center"
+                  key={i} 
+                  className="bg-white hover:bg-matcha/10 transition-colors p-3 rounded-lg border border-matcha/10 text-center"
                 >
-                  <span className="text-matcha font-medium">{app}</span>
+                  <span className="text-matcha font-medium">{item}</span>
                 </div>
               ))}
             </div>
             
-            <div className="mt-8 p-6 bg-matcha-cream/50 rounded-lg border border-matcha/10">
+            <div className="bg-white p-6 rounded-lg border border-matcha/10">
               <h4 className="font-medium text-matcha mb-3">Perfect for:</h4>
-              <p className="text-matcha-dark/70">
+              <p className="text-matcha-dark/70 mb-4">
                 Beverage menus, fusion desserts, and health-oriented offerings. 
                 Our matcha can elevate any menu with its authentic flavor and vibrant color.
               </p>
-              <div className="mt-4 bg-white/60 p-3 rounded">
-                <p className="text-sm text-matcha-dark/70 italic">
+              <div className="bg-matcha-cream/50 p-4 rounded">
+                <p className="text-sm text-matcha-dark/80 italic">
                   "Matcha's versatility allows for endless culinary creativity, while 
                   maintaining its health benefits and unique character."
                 </p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-matcha p-8 rounded-lg shadow-sm text-white">
+            <h3 className="text-xl font-serif font-medium mb-6">Why Customers Love Matcha</h3>
+            
+            <div className="space-y-5">
+              <div className="border-b border-white/20 pb-4">
+                <h4 className="font-medium mb-2">Health Benefits</h4>
+                <p className="text-sm text-white/80">Rich in antioxidants, supports metabolism and focus</p>
+              </div>
+              
+              <div className="border-b border-white/20 pb-4">
+                <h4 className="font-medium mb-2">Aesthetic Appeal</h4>
+                <p className="text-sm text-white/80">Vibrant green color makes for Instagram-worthy creations</p>
+              </div>
+              
+              <div className="border-b border-white/20 pb-4">
+                <h4 className="font-medium mb-2">Premium Experience</h4>
+                <p className="text-sm text-white/80">Customers willing to pay more for authentic Japanese matcha</p>
+              </div>
+              
+              <div>
+                <h4 className="font-medium mb-2">Clean Energy</h4>
+                <p className="text-sm text-white/80">3-6 hours of sustained energy without caffeine jitters</p>
               </div>
             </div>
           </div>

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import founderImage from '../assets/founder.png';
 
 const AboutSection = () => {
   return (
@@ -15,15 +16,12 @@ const AboutSection = () => {
           <div className="md:w-1/2">
             <div className="relative">
               {/* Founder Image */}
-              <div className="bg-matcha/10 w-full aspect-[4/5] rounded-lg overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-matcha/20 to-matcha-gold/10 flex items-center justify-center text-matcha-dark">
-                  {/* Replace with actual founder image */}
-                  <div className="text-center p-8">
-                    <div className="w-32 h-32 rounded-full bg-matcha-light mx-auto mb-4"></div>
-                    <h3 className="font-serif font-medium text-xl">Shreya Mishra</h3>
-                    <p className="text-sm text-matcha-dark/70">Founder</p>
-                  </div>
-                </div>
+              <div className="bg-matcha/5 w-full aspect-[4/5] rounded-lg overflow-hidden">
+                <img 
+                  src={founderImage} 
+                  alt="Shreya Mishra - Founder of Nohara Matcha" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               {/* Decorative elements */}
               <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-lg border-2 border-matcha-gold/30 -z-10"></div>
