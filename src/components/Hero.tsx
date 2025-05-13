@@ -1,8 +1,7 @@
 
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import matchaProduct from '../assets/matcha-product.png';
-import noharaLogo from '../assets/nohara-logo.png';
+import { images } from '../assets/index';
 
 const Hero = () => {
   return (
@@ -18,7 +17,7 @@ const Hero = () => {
           <div className="lg:w-1/2 mb-12 lg:mb-0 max-w-xl">
             <div className="mb-6 flex justify-start">
               <img 
-                src={noharaLogo} 
+                src={images.noharaLogo} 
                 alt="Nohara Logo" 
                 className="h-16 w-auto" 
               />
@@ -45,7 +44,7 @@ const Hero = () => {
           <div className="lg:w-1/2 flex justify-center lg:justify-end animate-fade-in" style={{animationDelay: '0.9s'}}>
             <div className="relative">
               <img 
-                src={matchaProduct} 
+                src={images.matchaProduct} 
                 alt="Nohara Matcha - Premium Product" 
                 className="w-auto h-[500px] object-contain animate-float"
               />

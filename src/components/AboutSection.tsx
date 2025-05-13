@@ -1,6 +1,6 @@
 
 import React from 'react';
-import founderImage from '../assets/founder.png';
+import { images } from '../assets/index';
 
 const AboutSection = () => {
   return (
@@ -18,7 +18,7 @@ const AboutSection = () => {
               {/* Founder Image */}
               <div className="bg-matcha/5 w-full aspect-[4/5] rounded-lg overflow-hidden">
                 <img 
-                  src={founderImage} 
+                  src={images.founder} 
                   alt="Shreya Mishra - Founder of Nohara Matcha" 
                   className="w-full h-full object-cover"
                 />
