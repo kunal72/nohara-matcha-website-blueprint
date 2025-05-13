@@ -1,10 +1,10 @@
 
 import React from 'react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
-import { Utensils } from 'lucide-react';
+import { Utensils, GalleryHorizontal } from 'lucide-react';
 
 const UsageSection = () => {
-  // Different matcha applications
+  // Different matcha applications with high-quality images
   const applications = [
     {
       name: "Matcha Latte",
@@ -42,18 +42,19 @@ const UsageSection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {applications.map((app, index) => (
-            <div key={index} className="bg-white rounded-lg overflow-hidden shadow-sm border border-matcha/10 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <div className="w-full h-64 relative">
-                <AspectRatio ratio={16/9}>
-                  <img 
-                    src={app.image} 
-                    alt={app.name} 
-                    className="w-full h-full object-cover"
-                  />
-                </AspectRatio>
+            <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md border border-matcha/10 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+              <div className="relative w-full h-64 overflow-hidden">
+                <img 
+                  src={app.image} 
+                  alt={app.name} 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-matcha/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-serif font-medium text-matcha mb-2">{app.name}</h3>
+                <h3 className="text-xl font-serif font-medium text-matcha mb-2 flex items-center">
+                  {app.name}
+                </h3>
                 <p className="text-matcha-dark/70">{app.description}</p>
               </div>
             </div>
@@ -81,7 +82,10 @@ const UsageSection = () => {
             </div>
             
             <div className="bg-white p-6 rounded-lg border border-matcha/10">
-              <h4 className="font-medium text-matcha mb-3">Perfect for:</h4>
+              <h4 className="font-medium text-matcha mb-3 flex items-center gap-2">
+                <GalleryHorizontal size={18} />
+                Perfect for:
+              </h4>
               <p className="text-matcha-dark/70 mb-4">
                 Beverage menus, fusion desserts, and health-oriented offerings. 
                 Our matcha can elevate any menu with its authentic flavor and vibrant color.
