@@ -73,12 +73,17 @@ const MarketSection = () => {
                     />
                     <ChartTooltip
                       cursor={{ fill: "var(--muted)" }}
-                      content={(props) => (
-                        <ChartTooltipContent
-                          {...props}
-                          formatter={(value) => [`$${value}B`, "Market Size"]}
-                        />
-                      )}
+                      content={(props) => {
+                        if (props.active && props.payload && props.payload.length) {
+                          return (
+                            <ChartTooltipContent
+                              {...props}
+                              formatter={(value) => [`$${value}B`, "Market Size"]}
+                            />
+                          );
+                        }
+                        return null;
+                      }}
                     />
                   </BarChart>
                 </ResponsiveContainer>
