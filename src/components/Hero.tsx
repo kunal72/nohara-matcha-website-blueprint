@@ -17,7 +17,11 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center">
           <div className="lg:w-1/2 mb-12 lg:mb-0 max-w-xl">
             <div className="mb-6 flex justify-start">
-              <img src={noharaLogo} alt="Nohara Logo" className="h-16 w-auto" />
+              <img 
+                src={noharaLogo} 
+                alt="Nohara Logo" 
+                className="h-16 w-auto" 
+              />
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-matcha mb-6 leading-tight animate-fade-in">
               Nohara Matcha – <br />
