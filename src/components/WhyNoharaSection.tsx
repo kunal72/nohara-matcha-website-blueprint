@@ -1,10 +1,7 @@
-
 import React from 'react';
 import { Leaf, Briefcase, Vegan } from 'lucide-react';
-
 const WhyNoharaSection = () => {
-  return (
-    <section id="why-nohara" className="section-padding bg-matcha-cream/50 leaf-pattern">
+  return <section id="why-nohara" className="section-padding bg-matcha-cream/50 leaf-pattern">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-matcha mb-4">
@@ -48,35 +45,8 @@ const WhyNoharaSection = () => {
         </div>
         
         {/* Certifications */}
-        <div className="mt-16 bg-white/80 backdrop-blur-sm p-8 rounded-lg border border-matcha/10 shadow-sm">
-          <h3 className="text-xl font-serif font-medium text-matcha mb-6 text-center">Our Certifications</h3>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            <div className="text-center transform hover:scale-105 transition-transform duration-300">
-              <div className="w-20 h-20 bg-matcha/10 rounded-full mx-auto mb-3 flex items-center justify-center">
-                <span className="text-lg font-semibold text-matcha">JAS</span>
-              </div>
-              <p className="font-medium text-matcha">Japan Organic</p>
-              <p className="text-xs text-matcha-dark/60 mt-1 max-w-[140px]">Japan's stringent certification for organic agricultural products</p>
-            </div>
-            <div className="text-center transform hover:scale-105 transition-transform duration-300">
-              <div className="w-20 h-20 bg-matcha/10 rounded-full mx-auto mb-3 flex items-center justify-center">
-                <span className="text-lg font-semibold text-matcha">USDA</span>
-              </div>
-              <p className="font-medium text-matcha">USDA Organic</p>
-              <p className="text-xs text-matcha-dark/60 mt-1 max-w-[140px]">US Department of Agriculture's organic certification standard</p>
-            </div>
-            <div className="text-center transform hover:scale-105 transition-transform duration-300">
-              <div className="w-20 h-20 bg-matcha/10 rounded-full mx-auto mb-3 flex items-center justify-center">
-                <span className="text-lg font-semibold text-matcha">EU</span>
-              </div>
-              <p className="font-medium text-matcha">EU Organic</p>
-              <p className="text-xs text-matcha-dark/60 mt-1 max-w-[140px]">European Union's strict standards for organic production</p>
-            </div>
-          </div>
-        </div>
+        
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default WhyNoharaSection;
