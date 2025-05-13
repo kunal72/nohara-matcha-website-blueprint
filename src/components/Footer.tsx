@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Instagram, Mail, WhatsApp } from 'lucide-react';
+import { Instagram, Mail, MessageSquare } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -18,7 +17,7 @@ const Footer = () => {
                 <Mail size={20} />
               </a>
               <a href="https://wa.me/917380598810" className="text-white hover:text-matcha-gold transition-colors">
-                <WhatsApp size={20} />
+                <MessageSquare size={20} />
               </a>
               <a href="https://instagram.com/drinknohara" className="text-white hover:text-matcha-gold transition-colors">
                 <Instagram size={20} />

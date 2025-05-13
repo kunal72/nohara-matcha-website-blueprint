@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight, Phone, Mail, WhatsApp } from 'lucide-react';
+import { ArrowRight, Phone, Mail, MessageSquare } from 'lucide-react';
 
 const PartnerSection = () => {
   // Business types
@@ -70,7 +70,7 @@ const PartnerSection = () => {
                 
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-matcha/10 flex items-center justify-center text-matcha">
-                    <WhatsApp size={18} />
+                    <MessageSquare size={18} />
                   </div>
                   <div>
                     <p className="text-sm text-matcha-dark/70">WhatsApp</p>
