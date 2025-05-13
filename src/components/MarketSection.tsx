@@ -73,13 +73,14 @@ const MarketSection = () => {
                     />
                     <ChartTooltip
                       cursor={{ fill: "var(--muted)" }}
-                      content={(props) => {
+                      content={function(props) {
                         if (props.active && props.payload && props.payload.length) {
+                          const value = props.payload[0].value;
                           return (
-                            <ChartTooltipContent
-                              {...props}
-                              formatter={(value) => [`$${value}B`, "Market Size"]}
-                            />
+                            <div className="bg-white p-2 border border-gray-200 shadow-sm rounded-md">
+                              <p className="text-sm font-medium">{`$${value}B`}</p>
+                              <p className="text-xs text-gray-500">Market Size</p>
+                            </div>
                           );
                         }
                         return null;
