@@ -13,9 +13,9 @@ const AboutSection = () => {
         </div>
         
         <div className="flex flex-col md:flex-row gap-10 items-center">
-          <div className="md:w-1/2">
+          <div className="md:w-2/5">
             <div className="relative">
-              {/* Founder Image */}
+              {/* Founder Image - Made smaller */}
               <div className="bg-matcha/5 w-full aspect-[4/5] rounded-lg overflow-hidden">
                 <img 
                   src={images.founder} 
@@ -24,11 +24,11 @@ const AboutSection = () => {
                 />
               </div>
               {/* Decorative elements */}
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-lg border-2 border-matcha-gold/30 -z-10"></div>
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 rounded-lg border-2 border-matcha-gold/30 -z-10"></div>
             </div>
           </div>
           
-          <div className="md:w-1/2">
+          <div className="md:w-3/5">
             <p className="text-lg mb-6 leading-relaxed text-matcha-dark/90">
               At Nohara Matcha, we believe in mindful living powered by nature.
             </p>

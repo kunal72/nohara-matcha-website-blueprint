@@ -4,27 +4,27 @@ import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Utensils, GalleryHorizontal } from 'lucide-react';
 
 const UsageSection = () => {
-  // Different matcha applications with high-quality images
+  // Different matcha applications with updated high-quality images
   const applications = [
     {
       name: "Matcha Latte",
       description: "Creamy and smooth, perfect for cafés",
-      image: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://res.cloudinary.com/dait24tgm/image/upload/v1747396327/co1mhhswwesmzs8bgdhk.jpg"
     },
     {
       name: "Matcha Ice Cream",
       description: "Refreshing dessert option",
-      image: "https://images.unsplash.com/photo-1561845730-208ad5910553?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://res.cloudinary.com/dait24tgm/image/upload/v1747396327/pwvimvvzqswsip2lihsr.jpg"
     },
     {
       name: "Matcha Energy Shots",
       description: "Quick wellness boost",
-      image: "https://images.unsplash.com/photo-1563929437588-6a3e28ddf494?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://res.cloudinary.com/dait24tgm/image/upload/v1747396434/rmstrdw4ddl6f4oegw4e.png"
     },
     {
       name: "Matcha Pastries",
       description: "Bakery and café offerings",
-      image: "https://images.unsplash.com/photo-1531051580877-6dea43d81974?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://res.cloudinary.com/dait24tgm/image/upload/v1747396327/ub2udsnpcu2l0xowynfs.jpg"
     }
   ];
 
@@ -44,11 +44,13 @@ const UsageSection = () => {
           {applications.map((app, index) => (
             <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md border border-matcha/10 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
               <div className="relative w-full h-64 overflow-hidden">
-                <img 
-                  src={app.image} 
-                  alt={app.name} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+                <AspectRatio ratio={4/3}>
+                  <img 
+                    src={app.image} 
+                    alt={app.name} 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </AspectRatio>
                 <div className="absolute inset-0 bg-gradient-to-t from-matcha/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="p-6">
