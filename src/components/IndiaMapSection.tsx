@@ -2,6 +2,7 @@
 import React from 'react';
 import { images } from '../assets/index';
 import { MapPin } from 'lucide-react';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const IndiaMapSection = () => {
   // Key cities where Nohara is expanding
@@ -71,56 +72,58 @@ const IndiaMapSection = () => {
           </div>
           
           <div className="lg:w-1/2 relative order-1 lg:order-2">
-            <div className="relative w-full aspect-square max-w-md mx-auto">
-              {/* Map Background */}
-              <img 
-                src={images.indiaMap} 
-                alt="India Map" 
-                className="w-full h-full object-contain opacity-90"
-              />
-              
-              {/* City Markers */}
-              {cities.map((city) => (
-                <div 
-                  key={city.name}
-                  className="absolute transform -translate-x-1/2 -translate-y-1/2 group"
-                  style={{ 
-                    left: `${city.x}%`, 
-                    top: `${city.y}%` 
-                  }}
-                >
-                  <div className={`
-                    flex flex-col items-center
-                    ${city.active ? 'scale-100' : 'scale-90 opacity-60'}
-                  `}>
-                    <MapPin 
-                      size={city.active ? 30 : 24} 
-                      className={`
-                        ${city.active ? 'text-matcha animate-pulse-subtle' : 'text-matcha/60'} 
-                        drop-shadow-md
-                      `}
-                      strokeWidth={city.active ? 2.5 : 1.5}
-                      fill={city.active ? 'rgba(26, 71, 42, 0.1)' : 'transparent'}
-                    />
-                    <span className={`
-                      text-xs font-medium mt-1 px-2 py-0.5 rounded-full 
-                      ${city.active 
-                        ? 'bg-white text-matcha shadow-sm border border-matcha/20' 
-                        : 'bg-white/70 text-matcha-dark/70'
-                      }
+            <div className="relative w-full h-96 md:h-auto md:aspect-square max-w-lg mx-auto">
+              <AspectRatio ratio={1/1} className="bg-matcha/5 rounded-lg overflow-hidden">
+                {/* Map Background */}
+                <img 
+                  src={images.indiaMap} 
+                  alt="India Map" 
+                  className="w-full h-full object-contain"
+                />
+                
+                {/* City Markers */}
+                {cities.map((city) => (
+                  <div 
+                    key={city.name}
+                    className="absolute transform -translate-x-1/2 -translate-y-1/2 group"
+                    style={{ 
+                      left: `${city.x}%`, 
+                      top: `${city.y}%` 
+                    }}
+                  >
+                    <div className={`
+                      flex flex-col items-center
+                      ${city.active ? 'scale-100' : 'scale-90 opacity-60'}
                     `}>
-                      {city.name}
-                    </span>
-                  </div>
-                  
-                  {city.active && (
-                    <div className="absolute top-0 left-0 -mt-1 w-3 h-3 rounded-full">
-                      <span className="absolute inline-flex h-full w-full rounded-full bg-matcha opacity-75 animate-ping"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-matcha"></span>
+                      <MapPin 
+                        size={city.active ? 30 : 24} 
+                        className={`
+                          ${city.active ? 'text-matcha animate-pulse-subtle' : 'text-matcha/60'} 
+                          drop-shadow-md
+                        `}
+                        strokeWidth={city.active ? 2.5 : 1.5}
+                        fill={city.active ? 'rgba(26, 71, 42, 0.1)' : 'transparent'}
+                      />
+                      <span className={`
+                        text-xs font-medium mt-1 px-2 py-0.5 rounded-full 
+                        ${city.active 
+                          ? 'bg-white text-matcha shadow-sm border border-matcha/20' 
+                          : 'bg-white/70 text-matcha-dark/70'
+                        }
+                      `}>
+                        {city.name}
+                      </span>
                     </div>
-                  )}
-                </div>
-              ))}
+                    
+                    {city.active && (
+                      <div className="absolute top-0 left-0 -mt-1 w-3 h-3 rounded-full">
+                        <span className="absolute inline-flex h-full w-full rounded-full bg-matcha opacity-75 animate-ping"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-matcha"></span>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </AspectRatio>
               
               {/* Decorative Elements */}
               <div className="absolute -bottom-4 -right-4 w-20 h-20 rounded-full border-2 border-matcha-gold/20 -z-10"></div>
