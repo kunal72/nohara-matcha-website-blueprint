@@ -42,7 +42,7 @@ const Hero = () => {
           animationDelay: '0.9s'
         }} className="lg:w-1/2 flex justify-center lg:justify-end animate-fade-in">
             <div className="relative">
-              <img src={images.matchaProduct} alt="Nohara Matcha - Premium Product" className="w-auto h-[500px] object-contain animate-float" />
+              <img src={images.matchaProduct} alt="Nohara Matcha - Premium Product" className="w-auto h-[700px] object-contain animate-float" />
               {/* Decorative elements */}
               <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full border-2 border-matcha-gold/30 -z-10"></div>
               <div className="absolute top-10 right-10 w-8 h-8 bg-matcha-cream/30 rounded-full animate-float" style={{
